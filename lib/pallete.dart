@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//colors
 class Pallete {
   static const Color mainFontColor = Color.fromRGBO(19, 61, 95, 1);
   static const Color firstSuggestionBoxColor = Color.fromRGBO(165, 231, 244, 1);
