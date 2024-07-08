@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:chat_assistant/secret.dart';
 import 'package:http/http.dart' as http;
-
+//integrate chatGPT, Dell E
 class OpenAIService {
   final List<Map<String, String>> messages = [];
   Future<String> isArtPromptAPI(String prompt) async {
