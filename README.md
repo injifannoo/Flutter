@@ -1,9 +1,11 @@
 **Voice Assistant App**
 
 **Overview**
+
 The Voice Assistant App is a Flutter-based application that integrates the capabilities of ChatGPT for natural language understanding and DALL-E for image generation. This app allows users to interact with a voice assistant, ask questions, and receive both text and image responses.
 
 **Features**
+
 - Voice Interaction: Users can interact with the assistant using voice commands.
 + Natural Language Processing: ChatGPT handles the text-based responses for user queries.
 * Image Generation: DALL-E generates images based on user prompts.
@@ -16,6 +18,7 @@ Dart: >=2.12.0
 API keys for ChatGPT and DALL-E
 ```
 **Installation**
+
 Clone the Repository:
 ```
 git clone https://github.com/yourusername/voice_assistant_app.git
@@ -57,6 +60,7 @@ assets/: Contains images and other static assets.
 pubspec.yaml: Defines dependencies and assets.
 ```
 **Contributing**
+
 Fork the Repository: Click the "Fork" button at the top right corner of the repository page.
 Clone Your Fork:
 ```
@@ -78,6 +82,7 @@ git push origin feature/your_feature_name
 Create a Pull Request: Go to the original repository and create a pull request from your forked repository.
 
 **Contact**
+
 For any inquiries or issues, please contact injifanotu@gmail.com.
 
 ***Enjoy using the Voice Assistant App!***
