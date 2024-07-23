@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:chat_assistant/secret.dart';
 import 'package:http/http.dart' as http;
+
 //integrate chatGPT, Dell E
 class OpenAIService {
   final List<Map<String, String>> messages = [];
@@ -64,7 +65,7 @@ class OpenAIService {
             jsonDecode(res.body)['choice'][0]['message']['content'];
         content = content.trim();
         messages.add({
-          'role': 'user',
+          'role': 'assistant',
           'content': content,
         });
         return content;
@@ -76,6 +77,36 @@ class OpenAIService {
   }
 
   Future<String> dallEAPI(String prompt) async {
-    return 'dall E';
+    messages.add({
+      'role': 'user',
+      'content': prompt,
+    });
+    try {
+      final res = await http.post(
+        Uri.parse('https://api.openai.com/v1/images/generations'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $openAiKey',
+        },
+        body: jsonEncode({
+          'prompt': prompt,
+          'n': 1,
+        }),
+      );
+
+      if (res.statusCode == 200) {
+        String imageUrl = jsonDecode(res.body)['data'][0]['url'];
+        imageUrl = imageUrl.trim();
+
+        messages.add({
+          'role': 'assistant',
+          'content': imageUrl,
+        });
+        return imageUrl;
+      }
+      return 'An internal error occurred';
+    } catch (e) {
+      return e.toString();
+    }
   }
 }

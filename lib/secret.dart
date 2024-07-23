@@ -1,1 +1,1 @@
-const openAiKey = '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';
+const openAiKey = 'sk-proj-MO53znUsqJhBP0N7f8vBT3BlbkFJ0JX8greE8zV4HDjRXfsA';
